@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCalc</title>
+
+    <!-- Website Icon -->
+    <link rel="icon"  href="images/title-icon.ico">
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheets and FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <Header class = "header container-fluid">
+        <nav class="navbar bg-light">
+            <div class="navbar-icons">
+                <button class="theme-icon btn"><i class="fa-solid fa-sun  btn-light"></i></button>
+                <button class="theme-icon btn"><i class="fa-solid fa-moon  btn-light"></i></button>
+                <button class="theme-icon btn"><i class="fa-solid fa-umbrella-beach  btn-light"></i></button>
+            </div>
+        </nav>
+
+        <div class="header-content row text-center">
+            <div class="header-text-content col-md-12 col-sm-12 col-lg-6">
+                <h1 class = "header-title">GEOMETRIC SHAPE CALCULATOR</h1>
+                <button class = "header-btn btn btn-primary btn-lg"><a href="#circle">START</a></button>
+            </div>
+            <div class="header-img-content col-lg-6">
+                <img src="images/title-img.png" alt="gcalc-img" class = "header-img">
+            </div>
+        </div>
+    </Header>
+
+    <!-- Formula Section -->
+    <section id = "formula" >
+        <div class="formula-container text-center row container-fluid">
+            <h2 >FORMULAS</h2>
+
+            <!-- Circle Formula -->
+            <div class="formula-content circle-formula col-lg-4">
+                <h3 >Circle</h3>
+
+                <!-- Circle Main Formula -->
+                <div class="main-formula">
+                    <p>Area (A) = πr <sup>2</sup></p>
+                    <p>Circumference (C) = 2πr</p>    
+                    <p>Diameter (d) = 2r</p> 
+                </div>
+            </div>
+
+            <!-- Triangle Formula -->
+            <div class=" formula-content triangle-formula col-lg-4">
+                <h3>Triangle</h3>
+
+                <!-- Triangle Main Formula -->
+                <div class="main-formula">
+                    <p>Area (A) = (<sup>√3</sup>&frasl;<sub>4</sub>) a<sup>2</sup></p> 
+                    <p>Perimeter (P) = 3a</p>
+                </div>
+                    
+            </div>
+
+            <!-- Square Formula -->
+            <div class=" formula-content square-formula col-lg-4">
+                <h3>Square</h3>
+
+                <!-- Square Main Formula -->
+                <div class="main-formula">
+                    <p>Area (A) = 4s</p> 
+                    <p>Perimeter (P) = s<sup>2</sup></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Circle Calculator Section -->
+    <section id = "circle">
+        <div class="calculator-container row d-flex align-items-center container-fluid">
+            <div class="calculator-img-container col-lg-5">
+                <img class="calculator-img" src="images/circle-radius.png" alt="circle-img ">
+            </div>
+            <div class="calc-main col-lg-7">
+                <!-- For input display -->
+                <div class="input-display row">
+                    <label for="radius" class = "label-info col-lg-3 ">Radius (r): </label>
+                    <input type="number" id = radius placeholder="Input radius here" class = "input-box col-lg-4">
+                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" >Calculate</button></div>
+                </div>
+                <!-- For Output Display -->
+                <div class="output-display row">
+                    <div class="output-container col-6 col-lg-12 row ">
+                        <label for="area" class = "output-label col-lg-4">Area (A) </label>
+                        <input type="number" id = "area" class = "output-box col-lg-8"  readonly>
+                    </div>
+                    <div class="output-container col-6 col-lg-12 row  ">
+                        <label for="diameter" class = "output-label col-lg-4">Diameter (d) </label>
+                        <input type="number" id="diameter" class = "output-box col-lg-8" readonly>
+                    </div>
+                    <div class="output-container col-12 col-lg-12 row circumference-output">
+                        <label for="circumference"  class = "output-label col-lg-4">Circumference (C) </label>
+                        <input type="number" id="circumference" class = "output-box col-lg-8" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class = "mx-auto">
+
+    <!-- Triangle Calculator Section -->
+    <section id = "triangle">
+        <div class="calculator-container row d-flex align-items-center container-fluid">
+            <div class="calculator-img-container col-lg-5">
+                <img class="calculator-img" src="images/triangle-img.png" alt="triangle-img ">
+            </div>
+            <div class="calc-main col-lg-7">
+                <!-- For input display -->
+                <div class="input-display row">
+                    <label for="radius" class = "label-info col-lg-3 ">Side (a): </label>
+                    <input type="number" id = radius placeholder="Input side here" class = "input-box col-lg-4">
+                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" >Calculate</button></div>
+                </div>
+                <!-- For Output Display -->
+                <div class="output-display row">
+                    <div class="output-container col-6 col-lg-12 row ">
+                        <label for="area" class = "output-label col-lg-4">Area (A) </label>
+                        <input type="number" id = "area" class = "output-box col-lg-8"  readonly>
+                    </div>
+                    <div class="output-container col-6 col-lg-12 row  ">
+                        <label for="perimeter" class = "output-label col-lg-4">Perimeter (P) </label>
+                        <input type="number" id="perimeter" class = "output-box col-lg-8" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <hr class = "mx-auto">
+
+    <!-- Square Calculator Section -->
+    <section id = "square container-fluid">
+        <div class="calculator-container row d-flex align-items-center container-fluid">
+            <div class="calculator-img-container col-lg-5">
+                <img class="calculator-img" src="images/square-img.png" alt="circle-img ">
+            </div>
+            <div class="calc-main col-lg-7">
+                <!-- For input display -->
+                <div class="input-display row">
+                    <label for="radius" class = "label-info col-lg-3 ">Side (s): </label>
+                    <input type="number" id = radius placeholder="Input side here" class = "input-box col-lg-4">
+                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" >Calculate</button></div>
+                </div>
+                <!-- For Output Display -->
+                <div class="output-display row">
+                    <div class="output-container col-6 col-lg-12 row ">
+                        <label for="area" class = "output-label col-lg-4">Area (A) </label>
+                        <input type="number" id = "area" class = "output-box col-lg-8"  readonly>
+                    </div>
+                    <div class="output-container col-6 col-lg-12 row  ">
+                        <label for="perimeter" class = "output-label col-lg-4">Perimeter (P) </label>
+                        <input type="number" id="perimeter" class = "output-box col-lg-8" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class = "mx-auto">
+
+    <!-- Footer Section -->
+    <footer>
+        <p class = "copyright">© Copyright 2022 GCalc</p>
+    </footer>
+
+    
+</body>
+</html>
