@@ -20,16 +20,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Javascript Link -->
+    <script src="script.js"></script>
+
 </head>
 <body>
 
     <!-- Header -->
     <Header class = "header">
-        <nav class="navbar bg-light">
+        <nav class="navbar">
             <div class="navbar-icons">
-                <button class="theme-icon btn"><i class="fa-solid fa-sun  btn-light"></i></button>
-                <button class="theme-icon btn"><i class="fa-solid fa-moon  btn-light"></i></button>
-                <button class="theme-icon btn"><i class="fa-solid fa-umbrella-beach  btn-light"></i></button>
+                <button class="icon light btn light-theme" onclick = "lighttheme(this)" ><i class="fa-solid fa-sun btn-light"></i></button>
+                <button class="icon dark theme-icon btn dark-theme" onclick = "darktheme(this)"><i class="fa-solid fa-moon btn-light"></i></button>
+                <button class="icon sepia theme-icon btn sepia-theme" onclick = "sepiatheme(this)"><i class="fa-solid fa-umbrella-beach btn-light"></i></button>
             </div>
         </nav>
 
@@ -46,7 +49,7 @@
 
     <!-- Formula Section -->
     <section id = "formula" class = "text-center row" >
-        <h2 >FORMULAS</h2>
+        <h2>FORMULAS</h2>
             <!-- Circle Formula -->
             <div class="formula-content circle-formula col-lg-4">
                 <h3 >Circle</h3>
@@ -94,21 +97,21 @@
                 <div class="input-display row">
                     <label for="radius" class = "label-info col-lg-3 ">Radius (r): </label>
                     <input type="number" id = radius placeholder="Input radius here" class = "input-box col-lg-4">
-                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" >Calculate</button></div>
+                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" onclick="circlecalc()">Calculate</button></div>
                 </div>
                 <!-- For Output Display -->
                 <div class="output-display row">
                     <div class="output-container col-6 col-lg-12 row ">
-                        <label for="area" class = "output-label col-lg-4">Area (A) </label>
-                        <input type="number" id = "area" class = "output-box col-lg-8"  readonly>
+                        <label for="circArea" class = "output-label col-lg-4">Area (A) </label>
+                        <input type="number" id = "circArea" class = "output-box col-lg-8"  readonly>
                     </div>
                     <div class="output-container col-6 col-lg-12 row  ">
-                        <label for="diameter" class = "output-label col-lg-4">Diameter (d) </label>
-                        <input type="number" id="diameter" class = "output-box col-lg-8" readonly>
+                        <label for="circDiameter" class = "output-label col-lg-4">Diameter (d) </label>
+                        <input type="number" id="circDiameter" class = "output-box col-lg-8" readonly>
                     </div>
                     <div class="output-container col-12 col-lg-12 row circumference-output">
-                        <label for="circumference"  class = "output-label col-lg-4">Circumference (C) </label>
-                        <input type="number" id="circumference" class = "output-box col-lg-8" readonly>
+                        <label for="circCircumference"  class = "output-label col-lg-4">Circumference (C) </label>
+                        <input type="number" id="circCircumference" class = "output-box col-lg-8" readonly>
                     </div>
                 </div>
             </div>
@@ -125,19 +128,19 @@
             <div class="calc-main col-lg-7">
                 <!-- For input display -->
                 <div class="input-display row">
-                    <label for="radius" class = "label-info col-lg-3 ">Side (a): </label>
-                    <input type="number" id = radius placeholder="Input side here" class = "input-box col-lg-4">
-                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" >Calculate</button></div>
+                    <label for="triside" class = "label-info col-lg-3 ">Side (a): </label>
+                    <input type="number" id = "triside" placeholder="Input side here" class = "input-box col-lg-4">
+                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" onclick = "trianglecalc()" >Calculate</button></div>
                 </div>
                 <!-- For Output Display -->
                 <div class="output-display row">
                     <div class="output-container col-6 col-lg-12 row ">
-                        <label for="area" class = "output-label col-lg-4">Area (A) </label>
-                        <input type="number" id = "area" class = "output-box col-lg-8"  readonly>
+                        <label for="triArea" class = "output-label col-lg-4">Area (A) </label>
+                        <input type="number" id = "triArea" class = "output-box col-lg-8"  readonly>
                     </div>
                     <div class="output-container col-6 col-lg-12 row  ">
-                        <label for="perimeter" class = "output-label col-lg-4">Perimeter (P) </label>
-                        <input type="number" id="perimeter" class = "output-box col-lg-8" readonly>
+                        <label for="triPerimeter" class = "output-label col-lg-4">Perimeter (P) </label>
+                        <input type="number" id="triPerimeter" class = "output-box col-lg-8" readonly>
                     </div>
                 </div>
             </div>
@@ -155,19 +158,19 @@
             <div class="calc-main col-lg-7">
                 <!-- For input display -->
                 <div class="input-display row">
-                    <label for="radius" class = "label-info col-lg-3 ">Side (s): </label>
-                    <input type="number" id = radius placeholder="Input side here" class = "input-box col-lg-4">
-                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" >Calculate</button></div>
+                    <label for="sqside" class = "label-info col-lg-3 ">Side (s): </label>
+                    <input type="number" id = "sqside" placeholder="Input side here" class = "input-box col-lg-4">
+                    <div class="button-div col-lg-3"><button class = "btn btn-secondary" onclick = "squarecalc()">Calculate</button></div>
                 </div>
                 <!-- For Output Display -->
                 <div class="output-display row">
                     <div class="output-container col-6 col-lg-12 row ">
-                        <label for="area" class = "output-label col-lg-4">Area (A) </label>
-                        <input type="number" id = "area" class = "output-box col-lg-8"  readonly>
+                        <label for="sqArea" class = "output-label col-lg-4">Area (A) </label>
+                        <input type="number" id = "sqArea" class = "output-box col-lg-8"  readonly>
                     </div>
                     <div class="output-container col-6 col-lg-12 row  ">
-                        <label for="perimeter" class = "output-label col-lg-4">Perimeter (P) </label>
-                        <input type="number" id="perimeter" class = "output-box col-lg-8" readonly>
+                        <label for="sqPerimeter" class = "output-label col-lg-4">Perimeter (P) </label>
+                        <input type="number" id="sqPerimeter" class = "output-box col-lg-8" readonly>
                     </div>
                 </div>
             </div>
@@ -179,7 +182,5 @@
     <footer>
         <p class = "copyright">© Copyright 2022 GCalc</p>
     </footer>
-
-    
 </body>
 </html>
